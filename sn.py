@@ -19,16 +19,16 @@ print """
 [3] - PRIV-MAIL
 [4] - SMTP
 [5] - HTTP
-[6] - SQL-NET
-[7] - SQLSRV (SQL Service)
-[8] - HTTPS
+[6] - TeamViewer
+[7] - ROUTER
+[8] - VNC use HTTP
 [9] - LOGIN
 [10] - SHELL
 [11] - Microsoft SQL Server
 [12] - PRINTER
-[13] - LG
-[14] - Microsoft Terminal Server
-[15] - Virtual Network Computing (VNC) remote desktop protocol
+[13] - LG TV
+[14] - VNC 
+[15] - VNC remote desktop protocol
 [16] - IP Camera
 [100] - Other"""
 port = input(">>>> ")
@@ -45,23 +45,23 @@ elif port == 4:
 elif port == 5:
  ports = 80
 elif port == 6:
- ports = 66
+ ports = 5938
 elif port == 7:
- ports = 156
+ ports = 520
 elif port == 8:
- ports = 443
+ ports = 5800
 elif port == 9:
  ports = 513
 elif port == 10:
  ports = 514
 elif port == 11:
- ports = 1434
+ ports = 1433
 elif port == 12:
- ports = 515
+ ports = 9100
 elif port == 13:
  ports = 37904
 elif port == 14:
- ports = 3389
+ ports = 5500
 elif port == 15:
  ports = 5900
 elif port == 16:
@@ -81,7 +81,7 @@ while True:
  sock.settimeout(1)
  result = sock.connect_ex((host,ports))
  if result == 0:
-   print '>>>>>>' + host + ' ~ port OPEN'
+   print '>>>>>> ' + host + ' ~ port OPEN'
    break
  else:
    print host + ' ~ port CLOSED'
