@@ -1,8 +1,8 @@
-import socket, threading, random
+import socket, threading, random, colorama
 from contextlib import closing
 print """
-         servers scan
-         
+\033[47m\033[31            mservers scan
+\033[0m  \033[32m       
      [][][]        [][]    []
      []            [] []   []
      [][][] [][][] []  []  []
@@ -12,7 +12,7 @@ print """
           Termux-Lab
         Vk: @termuxlab
 """
-print """
+print """\033[33m
 [0] - FTP
 [1] - SSH
 [2] - Telnet
@@ -31,46 +31,67 @@ print """
 [15] - VNC remote desktop protocol
 [16] - IP Camera
 [100] - Other"""
-port = input(">>>> ")
+port = input("\033[35m>>>> ")
 if port == 0:
  ports = 21
+ names = 'FTP'
 elif port == 1:
  ports = 22
+ names = 'SSH'
 elif port == 2:
  ports = 23
+ names = 'Telnet'
 elif port == 3:
  ports = 24
+ names = 'PRIV-MAIL'
 elif port == 4:
  ports = 25
+ names = 'SMTP'
 elif port == 5:
  ports = 80
+ names = 'HTTP'
 elif port == 6:
  ports = 5938
+ names = 'TeamViewer'
 elif port == 7:
  ports = 520
+ names = 'Router'
 elif port == 8:
  ports = 5800
+ names = 'VNC use HTTP'
 elif port == 9:
  ports = 513
+ names = 'LOGIN'
 elif port == 10:
  ports = 514
+ names = 'SHELL'
 elif port == 11:
  ports = 1433
+ names = 'Microsoft SQL Server'
 elif port == 12:
  ports = 9100
+ names = 'Printer'
 elif port == 13:
  ports = 37904
+ names = 'LG TV'
 elif port == 14:
  ports = 5500
+ names = 'VNC'
 elif port == 15:
  ports = 5900
+ names = 'VNC remote desktop protocol'
 elif port == 16:
  ports = 34567
-elif port == 01:
+ names = 'IP Camera'
+elif port == 100:
  ports = input("You Port >>> ")
+ names = ports
 else:
  ports = input("You Port >>> ")
-
+ names = ports
+downl = 0
+print 'Search servers...'
+print ''
 while True:
  qrand = random.randint(1,225)
  wrand = random.randint(0,255)
@@ -81,7 +102,7 @@ while True:
  sock.settimeout(1)
  result = sock.connect_ex((host,ports))
  if result == 0:
-   print '>>>>>> ' + host + ' ~ port OPEN'
+   print '\033[F\033[36m>>>>>> ' + host + ' ~ port OPEN'
    break
  else:
-   print host + ' ~ port CLOSED'
+    print "\033[F\033[31m"+host+" - Close "
