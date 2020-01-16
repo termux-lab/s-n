@@ -3,11 +3,11 @@ from contextlib import closing
 print """
 \033[47m\033[31            mservers scan
 \033[0m  \033[32m       
-     [][][]        [][]    []
+     [][][][]      [][]    []
      []            [] []   []
      [][][] [][][] []  []  []
          []        []   [] []
-     [][][]        []    [][]
+   [][][][]        []    [][]
 
           Termux-Lab
         Vk: @termuxlab
