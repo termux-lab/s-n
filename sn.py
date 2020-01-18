@@ -102,7 +102,7 @@ while True:
  sock.settimeout(1)
  result = sock.connect_ex((host,ports))
  if result == 0:
-   print '\033[F\033[36m>>>>>> ' + host + ' ~ port OPEN'
+   print '\033[F\033[36m>>>>>> ' + host + ' ~ port OPEN     '
    break
  else:
-    print "\033[F\033[31m"+host+" - Close "
+    print "\033[F\033[31m"+host+" - Close         "
