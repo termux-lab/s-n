@@ -75,7 +75,7 @@ elif port == 13:
  ports = 37904
  names = 'LG TV'
 elif port == 14:
- ports = 5500
+ ports = 3389
  names = 'VNC'
 elif port == 15:
  ports = 5900
