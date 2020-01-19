@@ -1,14 +1,13 @@
 import socket, threading, random, colorama
 from contextlib import closing
 print """
-\033[47m\033[31            servers scan\033[0m
-  \033[32m       
-__  ___/     _______ 
-_____ \________  __ \       Termux-Lab
-____/ //_____/  / / /     VK: @termuxlab
-/____/       /_/ /_/
-          
-        
+\033[47m\033[31 servers scan\033[0m
+\033[32m
+__ ___/ _______
+_____ \________ __ \     Termux-Lab
+____/ //_____/ / / /   VK: @termuxlab
+/____/ /_/ /_/
+
 """
 print """\033[33m
 [0] - FTP
@@ -25,11 +24,11 @@ print """\033[33m
 [11] - Microsoft SQL Server
 [12] - PRINTER
 [13] - LG TV
-[14] - VNC 
+[14] - VNC
 [15] - VNC remote desktop protocol
 [16] - IP Camera
 [100] - Other"""
-port = input("\033[35m>>>> ")
+port = input("\033[35m»» ")
 if port == 0:
  ports = 21
  names = 'FTP'
@@ -82,33 +81,32 @@ elif port == 16:
  ports = 34567
  names = 'IP Camera'
 elif port == 100:
- ports = input("You Port >>> ")
+ ports = input("You Port »> ")
  names = ports
 else:
- ports = input("You Port >>> ")
+ ports = input("You Port »> ")
  names = ports
 downl = 0
 count = 0
 print 'Search servers...'
+print ''
 print ''
 while True:
  qrand = random.randint(1,225)
  wrand = random.randint(0,255)
  erand = random.randint(0,255)
  rrand = random.randint(0,255)
- host  = str(qrand)+"."+ str(wrand)+"."+ str(erand)+"."+str(rrand)
+ host = str(qrand)+"."+ str(wrand)+"."+ str(erand)+"."+str(rrand)
  sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
  sock.settimeout(1)
  result = sock.connect_ex((host,ports))
  if result == 0:
-  print """\033[F\033[36m
-  Servers:"""+count+"""
-  >>>>>> """ + host + """ ~ port OPEN     """
+  print "\033[F\033[36m Servers:"+str(count)+" " + host + """ ~ port OPEN """
   count += 1
+  print ""
   save_file = open("scan.txt", "a+")
-  save_file.write("\n"+num+" "host+" "+ports+"")
+  save_file.write("\n "+host+":"+str(ports)+"\n")
   save_file.close()
  else:
-   print """\033[F\033[31m
-   Servers:"""+count+""" """
-   +host+""" - Close         """
+  print "\033[F\033[31m Servers:"+str(count)+" "+ str(host)+" - Close\033[0m "
+  
