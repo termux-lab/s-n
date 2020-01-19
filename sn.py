@@ -1,18 +1,19 @@
 import socket, threading, random, colorama
 from contextlib import closing
-print """
+print("""
 \033[47m\033[31            servers scan\033[0m
   \033[32m       
-     [][][][]      [][]    []
-     []            [] []   []
-     [][][] [][][] []  []  []
-         []        []   [] []
-   [][][][]        []    [][]
+ _______         _       
+(  ____ \       ( (    /|
+| (    \/       |  \  ( |
+| (_____  _____ |   \ | |
+(_____  )(_____)| (\ \) |
+      ) |       | | \   |
+/\____) |       | )  \  | Termux-Lab
+\_______)       |/    )_) Vk: @termuxlab
 
-          Termux-Lab
-        Vk: @termuxlab
-"""
-print """\033[33m
+""")
+print("""\033[33m
 [0] - FTP
 [1] - SSH
 [2] - Telnet
@@ -30,7 +31,7 @@ print """\033[33m
 [14] - VNC 
 [15] - VNC remote desktop protocol
 [16] - IP Camera
-[100] - Other"""
+[100] - Other""")
 port = input("\033[35m>>>> ")
 if port == 0:
  ports = 21
@@ -90,8 +91,8 @@ else:
  ports = input("You Port >>> ")
  names = ports
 downl = 0
-print 'Search servers...'
-print ''
+print('Search servers...')
+print('')
 while True:
  qrand = random.randint(1,225)
  wrand = random.randint(0,255)
@@ -102,7 +103,7 @@ while True:
  sock.settimeout(1)
  result = sock.connect_ex((host,ports))
  if result == 0:
-   print '\033[F\033[36m>>>>>> ' + host + ' ~ port OPEN     '
+   print('\033[F\033[36m>>>>>> ' + host + ' ~ port OPEN     ')
    break
  else:
-    print "\033[F\033[31m"+host+" - Close         "
+    print("\033[F\033[31m"+host+" - Close         ")
