@@ -1,31 +1,34 @@
 import socket, threading, random, colorama
 from contextlib import closing
-print("""
+print """
 \033[47m\033[31            servers scan\033[0m
   \033[32m       
-/ ___) ___ (  ( \                
-\___ \(___)/    /    𝓣𝓮𝓻𝓶𝓾𝔁-𝓛𝓪𝓫
-(____/     \_)__)    ᴠᴋ: @termuxlab
-
-\033[33m
-0 - ꜰᴛᴘ
-1 - ssʜ
-2 - ᴛᴇʟɴᴇᴛ
-3 - ᴘʀɪᴠ-ᴍᴀɪʟ
-4 - sᴍᴛᴘ
-5 - ʜᴛᴛᴘ
-6 - ᴛᴇᴀᴍᴠɪᴇᴡᴇʀ
-7 - ʀᴏᴜᴛᴇʀ
-8 - ᴠɴᴄ ᴜsᴇ ʜᴛᴛᴘ
-9 - ʟᴏɢɪɴ
-10 - sʜᴇʟʟ
-11 - ᴍɪᴄʀᴏsᴏꜰᴛ sǫʟ sᴇʀᴠᴇʀ
-12 - ᴘʀɪɴᴛᴇʀ
-13 - ʟɢ ᴛᴠ
-14 - ᴠɴᴄ
-15 - ᴠɴᴄ ʀᴇᴍᴏᴛᴇ ᴅᴇsᴋᴛᴏᴘ ᴘʀᴏᴛᴏᴄᴏʟ
-16 - ɪᴘ ᴄᴀᴍᴇʀᴀ
-100 - ᴏᴛʜᴇʀ""")
+__  ___/     _______ 
+_____ \________  __ \       Termux-Lab
+____/ //_____/  / / /     Vk: @termuxlab
+/____/       /_/ /_/
+          
+        
+"""
+print """\033[33m
+[0] - FTP
+[1] - SSH
+[2] - Telnet
+[3] - PRIV-MAIL
+[4] - SMTP
+[5] - HTTP
+[6] - TeamViewer
+[7] - ROUTER
+[8] - VNC use HTTP
+[9] - LOGIN
+[10] - SHELL
+[11] - Microsoft SQL Server
+[12] - PRINTER
+[13] - LG TV
+[14] - VNC 
+[15] - VNC remote desktop protocol
+[16] - IP Camera
+[100] - Other"""
 port = input("\033[35m>>>> ")
 if port == 0:
  ports = 21
@@ -79,14 +82,14 @@ elif port == 16:
  ports = 34567
  names = 'IP Camera'
 elif port == 100:
- ports = input("ʏᴏᴜ ᴘᴏʀᴛ >>> ")
+ ports = input("You Port >>> ")
  names = ports
 else:
- ports = input("ʏᴏᴜ ᴘᴏʀᴛ >>> ")
+ ports = input("You Port >>> ")
  names = ports
 downl = 0
-print('sᴇᴀʀᴄʜ sᴇʀᴠᴇʀs...')
-print('')
+print 'Search servers...'
+print ''
 while True:
  qrand = random.randint(1,225)
  wrand = random.randint(0,255)
@@ -97,7 +100,7 @@ while True:
  sock.settimeout(1)
  result = sock.connect_ex((host,ports))
  if result == 0:
-   print('\033[F\033[36m>>>>>> ' + host + ' ~ ᴘᴏʀᴛ ᴏᴘᴇɴ     ')
+   print '\033[F\033[36m>>>>>> ' + host + ' ~ port OPEN     '
    break
  else:
-    print("\033[F\033[31m"+host+" - ᴄʟᴏsᴇ         ")
+    print "\033[F\033[31m"+host+" - Close         "
