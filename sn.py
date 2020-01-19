@@ -81,10 +81,10 @@ elif port == 16:
  ports = 34567
  names = 'IP Camera'
 elif port == 100:
- ports = input("You Port »> ")
+ ports = input("You port >>> ")
  names = ports
 else:
- ports = input("You Port »> ")
+ ports = input("You port >>> ")
  names = ports
 downl = 0
 count = 0
