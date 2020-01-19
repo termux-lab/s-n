@@ -10,7 +10,7 @@ print("""
 (_____  )(_____)| (\ \) |
       ) |       | | \   |
 /\____) |       | )  \  | 𝓣𝓮𝓻𝓶𝓾𝔁-𝓛𝓪𝓫
-\_______)       |/    )_) Vk: @termuxlab
+\_______)       |/    )_) ᴠᴋ: @termuxlab
 
 """)
 print("""\033[33m
@@ -85,13 +85,13 @@ elif port == 16:
  ports = 34567
  names = 'IP Camera'
 elif port == 100:
- ports = input("You Port >>> ")
+ ports = input("ʏᴏᴜ ᴘᴏʀᴛ >>> ")
  names = ports
 else:
- ports = input("You Port >>> ")
+ ports = input("ʏᴏᴜ ᴘᴏʀᴛ >>> ")
  names = ports
 downl = 0
-print('Search servers...')
+print('sᴇᴀʀᴄʜ sᴇʀᴠᴇʀs...')
 print('')
 while True:
  qrand = random.randint(1,225)
@@ -103,7 +103,7 @@ while True:
  sock.settimeout(1)
  result = sock.connect_ex((host,ports))
  if result == 0:
-   print('\033[F\033[36m>>>>>> ' + host + ' ~ port OPEN     ')
+   print('\033[F\033[36m>>>>>> ' + host + ' ~ ᴘᴏʀᴛ ᴏᴘᴇɴ     ')
    break
  else:
-    print("\033[F\033[31m"+host+" - Close         ")
+    print("\033[F\033[31m"+host+" - ᴄʟᴏsᴇ         ")
