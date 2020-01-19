@@ -92,6 +92,10 @@ elif port == 101:
  r_string = r_file.read()
  print("\033[36m"+r_string)
  r_file.close()
+elif port == 102:
+ c_file = open("scan.txt", "w+")
+ c_file.write("")
+ c_file.close()
 else:
  ports = input("\033[35mYou port >>> ")
  print '\033[0m'
@@ -115,7 +119,7 @@ while True:
   count += 1
   print ""
   save_file = open("scan.txt", "a+")
-  save_file.write("\n "+host+":"+str(ports)+"\n")
+  save_file.write(" "+host+":"+str(ports)+"\n")
   save_file.close()
  else:
   print "\033[F\033[31m Servers:"+str(count)+" "+ str(host)+" - Close\033[0m      "
