@@ -28,7 +28,8 @@ print """\033[33m
 [14] - VNC
 [15] - VNC remote desktop protocol
 [16] - IP Camera
-[100] - Other"""
+[100] - Other
+[101] - Read IP address"""
 port = input("\033[35m >>>> ")
 print '\033[0m'
 if port == 0:
@@ -86,6 +87,11 @@ elif port == 100:
  ports = input("\033[35mYou port >>> ")
  print '\033[0m'
  names = ports
+elif port == 101:
+ r_file = open("scan.txt")
+ r_string = r_file.read()
+ print("\033[36m"+r_string)
+ r_file.close()
 else:
  ports = input("\033[35mYou port >>> ")
  print '\033[0m'
