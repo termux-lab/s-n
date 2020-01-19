@@ -88,6 +88,7 @@ else:
  ports = input("You Port >>> ")
  names = ports
 downl = 0
+count = 0
 print 'Search servers...'
 print ''
 while True:
@@ -100,7 +101,14 @@ while True:
  sock.settimeout(1)
  result = sock.connect_ex((host,ports))
  if result == 0:
-   print '\033[F\033[36m>>>>>> ' + host + ' ~ port OPEN     '
-   break
+  print """\033[F\033[36m
+  Servers:"""+count+"""
+  >>>>>> """ + host + """ ~ port OPEN     """
+  count += 1
+  my_file = open("scan.txt", "a+")
+  my_file.write("\n"+num+host+":"+ports+"")
+  my_file.close()
  else:
-    print "\033[F\033[31m"+host+" - Close         "
+   print """\033[F\033[31m
+   Servers:"""+count
+   +host+""" - Close         """
