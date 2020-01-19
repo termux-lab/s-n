@@ -105,9 +105,9 @@ while True:
   Servers:"""+count+"""
   >>>>>> """ + host + """ ~ port OPEN     """
   count += 1
-  my_file = open("scan.txt", "a+")
-  my_file.write("\n"+num+host+":"+ports+"")
-  my_file.close()
+  save_file = open("scan.txt", "a+")
+  save_file.write("\n"+num+host+":"+ports+"")
+  save_file.close()
  else:
    print """\033[F\033[31m
    Servers:"""+count
