@@ -99,7 +99,7 @@ elif port == 102:
  c_file.write("")
  c_file.close()
 elif port == 103:
- ip_ftp = input('\033[35m IP or Domain >>> ')
+ ip_ftp = raw_input('\033[35m IP or Domain >>> ')
  srt(ip_ftp)
  print """Do you know the login? 
  [1] - Yes
@@ -107,7 +107,7 @@ elif port == 103:
  """
  yn_ftp = input("\033[35m >>> ")
  if yn_ftp == 1:
-  login_ftp = input('\033[35m Login >>> ')
+  login_ftp = raw_input('\033[35m Login >>> ')
   os.system("hydra -l "+ login_ftp +" -P 'pass.txt' ftp://"+ip_ftp)
  elif yn_ftp == 2:
   print """Do you know the password? 
@@ -116,7 +116,7 @@ elif port == 103:
   """
   yn2_ftp = input("\033[35m >>> ")
   if yn2_ftp == 1:
-   pass_ftp = input('\033[35m Password >>> ')
+   pass_ftp = raw_input('\033[35m Password >>> ')
    os.system("hydra -L 'login.txt' -p "+ pass_ftp +" ftp://"+ip_ftp)
   else:
    os.system("hydra -L 'login.txt' -P 'pass.txt' ftp://"+ip_ftp)
