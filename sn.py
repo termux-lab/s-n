@@ -28,7 +28,7 @@ print """\033[33m
 [15] - VNC remote desktop protocol
 [16] - IP Camera
 [100] - Other"""
-port = input("\033[35m»» ")
+port = input("\033[35m >>>> ")
 if port == 0:
  ports = 21
  names = 'FTP'
