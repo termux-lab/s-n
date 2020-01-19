@@ -29,7 +29,9 @@ print """\033[33m
 [15] - VNC remote desktop protocol
 [16] - IP Camera
 [100] - Other
-[101] - Read IP address"""
+[101] - Read IP address
+[102] - Clear IP
+[103] - FTP Brut"""
 port = input("\033[35m >>>> ")
 print '\033[0m'
 if port == 0:
@@ -84,7 +86,7 @@ elif port == 16:
  ports = 34567
  names = 'IP Camera'
 elif port == 100:
- ports = input("\033[35mYou port >>> ")
+ ports = input("\033[35m You port >>> ")
  print '\033[0m'
  names = ports
 elif port == 101:
@@ -96,8 +98,11 @@ elif port == 102:
  c_file = open("scan.txt", "w+")
  c_file.write("")
  c_file.close()
+elif port == 103:
+ ip_ftp = input('\033[35m IP or Domain >>> ')
+ os.system("hydra -L 'login.txt' -P 'pass.txt' ftp://"+ip_ftp)
 else:
- ports = input("\033[35mYou port >>> ")
+ ports = input("\033[35m You port >>> ")
  print '\033[0m'
  names = ports
 downl = 0
