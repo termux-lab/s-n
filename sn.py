@@ -30,6 +30,7 @@ print """\033[33m
 [16] - IP Camera
 [100] - Other"""
 port = input("\033[35m >>>> ")
+print '\033[0m'
 if port == 0:
  ports = 21
  names = 'FTP'
@@ -82,14 +83,16 @@ elif port == 16:
  ports = 34567
  names = 'IP Camera'
 elif port == 100:
- ports = input("You port >>> ")
+ ports = input("\033[35mYou port >>> ")
+ print '\033[0m'
  names = ports
 else:
- ports = input("You port >>> ")
+ ports = input("\033[35mYou port >>> ")
+ print '\033[0m'
  names = ports
 downl = 0
 count = 0
-print 'Search servers...'
+print '\033[35m Search servers...'
 print ''
 print ''
 while True:
