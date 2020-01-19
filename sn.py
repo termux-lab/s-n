@@ -1,4 +1,4 @@
-import socket, threading, random, colorama
+import socket, threading, random, colorama, os
 from contextlib import closing
 os.system("clear")
 print """
