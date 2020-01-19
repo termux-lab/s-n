@@ -101,12 +101,12 @@ while True:
  sock.settimeout(1)
  result = sock.connect_ex((host,ports))
  if result == 0:
-  print "\033[F\033[36m Servers:"+str(count)+" " + host + """ ~ port OPEN """
+  print "\033[F\033[36m Servers:"+str(count)+" " + host + """ ~ port OPEN        """
   count += 1
   print ""
   save_file = open("scan.txt", "a+")
   save_file.write("\n "+host+":"+str(ports)+"\n")
   save_file.close()
  else:
-  print "\033[F\033[31m Servers:"+str(count)+" "+ str(host)+" - Close\033[0m "
+  print "\033[F\033[31m Servers:"+str(count)+" "+ str(host)+" - Close\033[0m      "
   
