@@ -100,6 +100,7 @@ elif port == 102:
  c_file.close()
 elif port == 103:
  ip_ftp = input('\033[35m IP or Domain >>> ')
+ srt(ip_ftp)
  print """Do you know the login? 
  [1] - Yes
  [2] - No
