@@ -2,7 +2,7 @@ import socket, threading, random, colorama, os
 from contextlib import closing
 os.system("clear")
 print """
-\033[47m\033[31 servers scan\033[0m
+\033[47m\033[31    servers scan\033[0m
 \033[32m
 __ ___/ _______
 _____ \________ __ \     Termux-Lab
