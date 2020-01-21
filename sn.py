@@ -114,7 +114,7 @@ elif port == 103:
   [1] - Yes
   [2] - No
   """
-   yn2_ftp = input("\033[35m >>> ")
+  yn2_ftp = input("\033[35m >>> ")
   if yn2_ftp == 1:
    pass_ftp = raw_input('\033[35m Password >>> ')
    os.system("hydra -L 'login.txt' -p "+ pass_ftp +" ftp://"+ip_ftp)
