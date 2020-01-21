@@ -114,12 +114,12 @@ elif port == 103:
   [1] - Yes
   [2] - No
   """
-  yn2_ftp = input("\033[35m >>> ")
+   yn2_ftp = input("\033[35m >>> ")
   if yn2_ftp == 1:
    pass_ftp = raw_input('\033[35m Password >>> ')
-   os.system("hydra -L 'login.txt' -p "+ pass_ftp +" ft>
+   os.system("hydra -L 'login.txt' -p "+ pass_ftp +" ftp://"+ip_ftp)
   else:
-   os.system("hydra -L 'login.txt' -P 'pass.txt' ftp://>
+   os.system("hydra -L 'login.txt' -P 'pass.txt' ftp://"+ip_ftp)
 
 else:
  ports = input("\033[35m You port >>> ")
@@ -138,16 +138,16 @@ else:
   wrand = random.randint(0,255)
   erand = random.randint(0,255)
   rrand = random.randint(0,255)
-  host = str(qrand)+"."+ str(wrand)+"."+ str(erand)+".">
-  sock = socket.socket(socket.AF_INET, socket.SOCK_STRE>
+  host = str(qrand)+"."+ str(wrand)+"."+ str(erand)+"."+str(rrand)
+  sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
   sock.settimeout(0.2)
   result = sock.connect_ex((host,ports))
   if result == 0:
-   print "\033[F\033[36m Servers:"+str(count)+" " + hos>
+   print "\033[F\033[36m Servers:"+str(count)+" " + host + """ ~ port OPEN        """
    count += 1
    print ""
    save_file = open("scan.txt", "a+")
    save_file.write(" "+host+":"+str(ports)+"\n")
    save_file.close()
   else:
-   print "\033[F\033[31m Servers:"+str(count)+" "+ str(>
+   print "\033[F\033[31m Servers:"+str(count)+" "+ str(host)+" - Close\033[0m      "
