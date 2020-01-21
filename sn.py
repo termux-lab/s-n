@@ -140,7 +140,7 @@ else:
   rrand = random.randint(0,255)
   host = str(qrand)+"."+ str(wrand)+"."+ str(erand)+"."+str(rrand)
   sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-  sock.settimeout(0.2)
+  sock.settimeout(0.3)
   result = sock.connect_ex((host,ports))
   if result == 0:
    print "\033[F\033[36m Servers:"+str(count)+" " + host + """ ~ port OPEN        """
