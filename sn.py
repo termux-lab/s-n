@@ -4,10 +4,10 @@ os.system("clear")
 print """
 \033[47m\033[31    servers scan\033[0m
 \033[32m
-__ ___/ _______
+__ ___/     _______
 _____ \________ __ \     Termux-Lab
-____/ //_____/ / / /   VK: @termuxlab
-/____/      /_/ /_/
+____/ //_____/ / / /     Tg: @termuxlab
+/____/      /_/ /_/      Vk: @termux_lab
 
 """
 print """\033[33m
@@ -139,7 +139,7 @@ else:
   rrand = random.randint(0,255)
   host = str(qrand)+"."+ str(wrand)+"."+ str(erand)+"."+str(rrand)
   sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-  sock.settimeout(0.3)
+  sock.settimeout(1)
   result = sock.connect_ex((host,ports))
   if result == 0:
    print "\033[F\033[36m Servers:"+str(count)+" " + host + """ ~ port OPEN        """
