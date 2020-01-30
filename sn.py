@@ -11,27 +11,19 @@ ____/ //_____/ / / /     Tg: @termuxlab
 
 """
 print """\033[33m
-[0] - FTP
-[1] - SSH
-[2] - Telnet
-[3] - PRIV-MAIL
-[4] - SMTP
-[5] - HTTP
-[6] - TeamViewer
-[7] - ROUTER
-[8] - VNC use HTTP
-[9] - LOGIN
-[10] - SHELL
-[11] - Microsoft SQL Server
-[12] - PRINTER
-[13] - LG TV
-[14] - VNC
-[15] - VNC remote desktop protocol
-[16] - IP Camera
-[100] - Other
-[101] - Read IP address
+[0] - FTP                 [9] - LOGIN
+[1] - SSH                 [10] - SHELL
+[2] - Telnet              [11] - Microsoft SQL Server
+[3] - PRIV-MAIL           [12] - PRINTER
+[4] - SMTP                [13] - LG TV
+[5] - HTTP                [14] - VNC
+[6] - TeamViewer          [15] - VNC rem.desk.prot
+[7] - ROUTER              [16] - IP Camera
+[8] - VNC use HTTP        [100] - Other
+_______________________________________________
+[101] - Read IP address   [103] - FTP Brut"
 [102] - Clear IP
-[103] - FTP Brut"""
+""
 port = input("\033[35m >>>> ")
 print '\033[0m'
 if port == 0:
